@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="code" style="width: 1000px; height: 500px;" rows="3" height="200px" type="text" placeholder="Code ở đây, bạn chỉ cần nhập code không tần tạo function"></textarea>
+    <div class="apppend_here">
+        <p>Đề cho sẵn biến Array_test</p>
+        <button class="but">Run</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var test_case_array = [{
+        "array": [1, 2, 3, 4, 5],
+        "result": "15"
+    }, {
+        "array": [11, 22, 33, 44, 55],
+        "result": "165"
+    }, {
+        "array": [11, 23, 32, 43, 51],
+        "result": "160"
+    }, {
+        "array": [12, 23, 33, 42, 51],
+        "result": "161"
+    }, {
+        "array": [13, 23, 31, 43, 52],
+        "result": "162"
+    }, ]
+
+    test_case_array.forEach(function(items, index) {
+        var p = document.createElement("p");
+
+        if (index > 2) {
+            p.textContent = "Test case: " + Number(index + 1) + ": ẩn đi!"
+        } else {
+            p.textContent = "Test case: " + Number(index + 1) + " : [" + items.array + "]";
+        }
+
+        var append = document.querySelector(".apppend_here");
+        append.appendChild(p);
+    })
+
+    var but = document.querySelector(".but");
+    but.addEventListener("click", function() {
+        var code_to = document.getElementById("code").value;
+        try {
+            test_case_array.forEach(function(items, index) {
+                var Array_test = items.array;
+                var result_code = new Function('Array_test', code_to)(Array_test)
+                if (result_code == items.result) {
+                    console.log("case " + Number(index + 1) + " đúng")
+                } else {
+                    console.log("case " + Number(index + 1) + " sai")
+                };
+            })
+        } catch (err) {
+            alert("Lỗi code " + err);
+        }
+    })
+</script>

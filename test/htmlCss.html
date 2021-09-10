@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .write_code {
+            width: 50%;
+            float: left;
+        }
+        
+        .Html {
+            vertical-align: top;
+            height: 300px;
+            overflow: auto;
+            resize: none;
+        }
+        
+        .Css {
+            vertical-align: top;
+            height: 300px;
+            overflow: auto;
+            resize: none;
+        }
+        
+        .outPut {
+            width: 50%;
+            float: left;
+        }
+        
+        .out {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="write_code">
+        <p>Html: </p>
+        <textarea class="Html" style="width: 90%;"></textarea>
+        <p>Css: </p>
+        <textarea class="Css" style="width: 90%;"></textarea>
+    </div>
+    <div class="outPut">
+        <p>Out put: </p>
+        <iframe class="out"></iframe>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var Html = document.querySelector(".Html");
+    var Css = document.querySelector(".Css");
+    var outPut = document.querySelector(".out");
+
+    var fill = function() {
+        var doc = outPut.contentDocument;
+        var style = document.createElement("style");
+        doc.body.innerHTML = Html.value;
+        style.innerHTML = Css.value;
+        doc.body.appendChild(style);
+    }
+
+    Html.onkeyup = fill;
+    Css.onkeyup = fill;
+</script>
