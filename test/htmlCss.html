@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="high_light.css" rel="stylesheet" type="text/css">
+    <script src="rainbow-custom.min.js"></script>
     <title>Document</title>
     <style>
         .write_code {
@@ -35,15 +37,32 @@
             height: 100%;
             width: 100%;
         }
+        
+        .class_h1 {
+            color: rgb(206, 65, 65);
+        }
+        
+        .other {
+            color: rgb(0, 0, 0);
+        }
+        
+        .danhdau {
+            color: blue;
+        }
+        
+        .style {
+            color: green;
+        }
     </style>
 </head>
 
 <body>
     <div class="write_code">
         <p>Html: </p>
-        <textarea class="Html" style="width: 90%;"></textarea>
+        <!-- <div class="Html" id="write_code" contenteditable=true></div> -->
+        <pre id="test" class="Html"></pre>
         <p>Css: </p>
-        <textarea class="Css" style="width: 90%;"></textarea>
+        <div class="Css" contenteditable=true></div>
     </div>
     <div class="outPut">
         <p>Out put: </p>
@@ -52,20 +71,50 @@
 </body>
 
 </html>
-
 <script>
+    var text = "<h1>12 3</h1>\n<h2>431</h2>\n<h3>22 2</h3>";
+    var toz = "";
+    toz += '<code class="language-html" id="code">' + text + '</code>' + "</br>"
+    document.getElementById("test").innerHTML = toz;
+
+    var code = document.querySelectorAll("#code");
+    code.forEach(function(items, index) {
+        console.log(items.innerHTML);
+    })
+</script>
+<!-- <script>
     var Html = document.querySelector(".Html");
     var Css = document.querySelector(".Css");
     var outPut = document.querySelector(".out");
 
     var fill = function() {
-        var doc = outPut.contentDocument;
-        var style = document.createElement("style");
-        doc.body.innerHTML = Html.value;
-        style.innerHTML = Css.value;
-        doc.body.appendChild(style);
+        Rainbow.color();
+        // var div = document.createElement('div');
+        // div.innerHTML = '<code data-language="javascript">' + Html.textContent + '</code>';
+        // Rainbow.color(div, function() {
+        //     document.getElementById('code').innerHTML = "";
+        //     document.getElementById('code').appendChild(div);
+
+        //     // Set cursor postion to end of text
+        //     var child = document.getElementById('code').children;
+        //     var range = document.createRange();
+        //     var sel = window.getSelection();
+        //     range.setStart(child[child.length - 1], 1);
+        //     range.collapse(true);
+        //     sel.removeAllRanges();
+        //     sel.addRange(range);
+        //     this.focus();
+        // });
+
+        // var doc = outPut.contentDocument;
+        // var style = document.createElement("style");
+        // doc.body.innerHTML = Html.textContent;
+        // style.innerHTML = Css.textContent;
+        // doc.body.appendChild(style);
+
+        // var code = document.getElementById('write_code');
     }
 
     Html.onkeyup = fill;
     Css.onkeyup = fill;
-</script>
+</script> -->

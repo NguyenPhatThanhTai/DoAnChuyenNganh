@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="lib/codemirror.js"></script>
+    <script src="mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="mode/xml/xml.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="myTextArea"></textarea>
+    <button onclick="sendCode()">Chạy</button>
+    <div class="outPut">
+        <p>Out put: </p>
+        <iframe class="out"></iframe>
+    </div>
+</body>
+
+</html>
+<script>
+    var textarea_editor = document.getElementById("myTextArea");
+
+    // so explicitly assign value to textarea object.
+    textarea_editor.value = "<h3>123</h3>";
+
+
+    this.editor = CodeMirror.fromTextArea(textarea_editor, {
+        tabSize: 4,
+        mode: "xml",
+        htmlMode: true,
+        theme: 'default',
+        lineNumbers: true,
+        styleActiveSelected: true,
+        styleActiveLine: true,
+        indentWithTabs: true,
+        matchBrackets: true,
+        highlightMatches: true,
+    });
+
+    var Html = document.getElementById("myTextArea");
+    // var Css = document.querySelector(".Css");
+    var outPut = document.querySelector(".out");
+
+    function sendCode() {
+        var doc = outPut.contentDocument;
+        var style = document.createElement("style");
+        doc.body.innerHTML = Html.value;
+        // style.innerHTML = Css.textContent;
+        doc.body.appendChild(style);
+    }
+</script>
