@@ -26,8 +26,9 @@
     var textarea_editor = document.getElementById("myTextArea");
 
     // so explicitly assign value to textarea object.
-    textarea_editor.value = "<h3>123</h3>";
-
+    var array = ['<table>\n', '', '<tr>\n', '', '', '', '<td>Emil</td>\n', '', '', '', '<td>Tobias</td>\n', '', '', '', '<td>Linus</td>\n', '', '</tr>\n</table>'];
+    console.log(array.toString().replaceAll(",", " "))
+    textarea_editor.value = array.toString().replaceAll(",", " ");
 
     this.editor = CodeMirror.fromTextArea(textarea_editor, {
         tabSize: 4,
@@ -49,8 +50,11 @@
     function sendCode() {
         var doc = outPut.contentDocument;
         var style = document.createElement("style");
-        doc.body.innerHTML = Html.value;
-        // style.innerHTML = Css.textContent;
+        doc.body.innerHTML = this.editor.getValue();
+        // console.log(this.editor.getValue());
+        var newArray = this.editor.getValue().split(" ");
+        console.log(newArray)
+            // style.innerHTML = Css.textContent;
         doc.body.appendChild(style);
     }
 </script>
