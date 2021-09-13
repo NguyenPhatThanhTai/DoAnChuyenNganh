@@ -6,35 +6,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="lib/theme/dracula.css">
     <script src="lib/codemirror.js"></script>
     <script src="mode/javascript/javascript.js"></script>
     <script type="text/javascript" src="mode/xml/xml.js"></script>
+    <script type="text/javascript" src="mode/css/css.js"></script>
+    <script src="https://unpkg.com/typeit@8.0.3/dist/index.umd.js"></script>
     <title>Document</title>
+    <style>
+        html,
+        body {
+            scroll-behavior: smooth;
+            background-color: rgb(78, 85, 67);
+        }
+        
+        .navigation {
+            background-color: coral;
+            border-radius: 10px;
+            padding: 10px;
+            overflow: hidden;
+            margin: 0 10px 30px 10px;
+        }
+        
+        .navigation button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(33, 153, 33);
+            color: white;
+            float: right;
+            cursor: pointer;
+        }
+        
+        .code_side {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+        
+        .CodeMirror {
+            font-size: 15px;
+            margin: 10px;
+            padding: 10px;
+            height: 330px;
+            border-radius: 10px;
+        }
+        
+        .tittle {
+            background-color: darksalmon;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .result iframe {
+            width: 100%;
+            height: 500px;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <textarea id="myTextArea"></textarea>
-    <button onclick="sendCode()">Chạy</button>
-    <div class="outPut">
-        <p>Out put: </p>
-        <iframe class="out"></iframe>
+    <div class="container">
+        <div class="navigation">
+            <button onclick="sendCode()">Chạy thử</button>
+        </div>
+        <div class="code_side">
+            <p class="tittle">Html</p>
+            <textarea id="html"></textarea>
+            <p class="tittle">Css</p>
+            <textarea id="css"></textarea>
+        </div>
+        <div class="code_side">
+            <p class="tittle">Javascript</p>
+            <textarea id="javascript"></textarea>
+            <p class="tittle">Ghi chú</p>
+            <textarea id="text"></textarea>
+        </div>
+        <div class="result">
+            <iframe class="out" id="out"></iframe>
+        </div>
     </div>
 </body>
 
 </html>
 <script>
-    var textarea_editor = document.getElementById("myTextArea");
+    var html = document.getElementById("html");
+    var css = document.getElementById("css");
+    var js = document.getElementById("javascript");
+    var text = document.getElementById("text");
 
-    // so explicitly assign value to textarea object.
     var array = ['<table>\n', '', '<tr>\n', '', '', '', '<td>Emil</td>\n', '', '', '', '<td>Tobias</td>\n', '', '', '', '<td>Linus</td>\n', '', '</tr>\n</table>'];
     console.log(array.toString().replaceAll(",", " "))
-    textarea_editor.value = array.toString().replaceAll(",", " ");
+    html.value = array.toString().replaceAll(",", " ");
 
-    this.editor = CodeMirror.fromTextArea(textarea_editor, {
+    var myCodeMirrorHtml = CodeMirror.fromTextArea(html, {
         tabSize: 4,
         mode: "xml",
         htmlMode: true,
-        theme: 'default',
+        theme: 'dracula',
         lineNumbers: true,
         styleActiveSelected: true,
         styleActiveLine: true,
@@ -43,18 +119,74 @@
         highlightMatches: true,
     });
 
-    var Html = document.getElementById("myTextArea");
-    // var Css = document.querySelector(".Css");
+    var myCodeMirrorCss = CodeMirror.fromTextArea(css, {
+        tabSize: 4,
+        mode: "css",
+        theme: 'dracula',
+        lineNumbers: true,
+        styleActiveSelected: true,
+        styleActiveLine: true,
+        indentWithTabs: true,
+        matchBrackets: true,
+        highlightMatches: true,
+    });
+
+    var myCodeMirrorJs = CodeMirror.fromTextArea(js, {
+        tabSize: 4,
+        mode: "javascript",
+        theme: 'dracula',
+        lineNumbers: true,
+        styleActiveSelected: true,
+        styleActiveLine: true,
+        indentWithTabs: true,
+        matchBrackets: true,
+        highlightMatches: true,
+    });
+
+    var myCodeMirrorText = CodeMirror.fromTextArea(text, {
+        tabSize: 4,
+        mode: "text",
+        theme: 'dracula',
+        lineNumbers: true,
+        styleActiveSelected: true,
+        styleActiveLine: true,
+        indentWithTabs: true,
+        matchBrackets: true,
+        highlightMatches: true,
+    });
+    // var Css = document.querySelector(".Css ");
     var outPut = document.querySelector(".out");
 
     function sendCode() {
-        var doc = outPut.contentDocument;
         var style = document.createElement("style");
-        doc.body.innerHTML = this.editor.getValue();
-        // console.log(this.editor.getValue());
-        var newArray = this.editor.getValue().split(" ");
+        var script = document.createElement("script");
+        var doc = outPut.contentDocument;
+
+        //add dữ liệu vô
+        doc.body.innerHTML = myCodeMirrorHtml.getValue();
+        var newArray = myCodeMirrorHtml.getValue().split(" ");
         console.log(newArray)
-            // style.innerHTML = Css.textContent;
+        style.innerHTML = myCodeMirrorCss.getValue();
         doc.body.appendChild(style);
+        script.innerHTML = myCodeMirrorJs.getValue();
+        script.type = 'text/javascript';
+        doc.head.appendChild(script);
+
+        console.log(myCodeMirrorJs.getValue())
+
+        //libary
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css";
+        doc.head.appendChild(link);
+        var ajax = document.createElement("script");
+        ajax.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+        doc.head.appendChild(ajax);
+        var bootstrap = document.createElement("script");
+        bootstrap.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+        doc.head.appendChild(bootstrap);
+
+        //sau khi add xong
+        document.getElementById("out").scrollIntoView();
     }
 </script>
