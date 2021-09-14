@@ -1,0 +1,348 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    body {
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .sideBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 85px;
+        background: #11101d;
+        padding: 6px 15px;
+        transition: all 0.5s ease;
+        z-index: 99;
+    }
+    
+    .sideBar.active {
+        width: 240px;
+    }
+    
+    .sideBar .logo_content .logo {
+        align-items: center;
+        pointer-events: none;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .sideBar .logo_content .logo img {
+        max-height: 120px;
+    }
+    
+    .sideBar.active .logo {
+        opacity: 1;
+    }
+    
+    .sideBar #btn {
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        margin-right: 10px;
+        color: #fff;
+        font-size: 20px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        transform: translateX(-50%);
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+    
+    .sideBar.active #btn {
+        left: 90%;
+    }
+    
+    .sideBar ul {
+        margin-top: 20px;
+    }
+    
+    .sideBar ul li {
+        list-style: none;
+        position: relative;
+        height: 50px;
+        width: 100%;
+        list-style: none;
+        line-height: 50px;
+        margin: 0 5px;
+    }
+    
+    .sideBar ul li .tooltip {
+        position: absolute;
+        color: #fff;
+        background-color: #11101d;
+        padding: 6px;
+        border-radius: 6px;
+        left: 70px;
+        top: 70px;
+        width: 122px;
+        font-size: 10px;
+        transform: translateY(-50%);
+        line-height: 35px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        opacity: 0;
+    }
+    
+    .sideBar ul li:hover .tooltip {
+        top: 50%;
+        opacity: 1;
+    }
+    
+    .sideBar.active ul li:hover .tooltip {
+        top: 50%;
+        opacity: 0;
+    }
+    
+    .sideBar ul li input {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        border-radius: 12px;
+        outline: none;
+        border: none;
+        background: #1d1b32;
+        padding-left: 50px;
+        font-size: 18px;
+        color: #fff;
+        transition: all 0.5s ease;
+    }
+    
+    .sideBar.active ul li input {
+        width: 100%;
+    }
+    
+    .sideBar ul li .bx-search:hover {
+        background: #fff;
+        color: black;
+    }
+    
+    .sideBar.active ul li .bx-search:hover {
+        background: none;
+        color: #fff;
+    }
+    
+    .sideBar ul li .bx-search {
+        position: absolute;
+        z-index: 99;
+        color: #fff;
+        font-size: 22px;
+    }
+    
+    .sideBar ul li a {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        border-radius: 12px;
+        white-space: nowrap;
+        width: 100%;
+    }
+    
+    .sideBar ul li a:hover {
+        color: #11101d;
+        background: #fff;
+    }
+    
+    .sideBar ul li i {
+        height: 50px;
+        min-width: 50px;
+        border-radius: 12px;
+        line-height: 50px;
+        text-align: center;
+    }
+    
+    .sideBar .links_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sideBar.active .links_name {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sideBar .profile_content {
+        position: absolute;
+        color: #fff;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+    .sideBar .profile_content .profile {
+        position: relative;
+        padding: 10px 6px;
+        height: 60px;
+    }
+    
+    .profile_content .profile .profile_details {
+        display: flex;
+        align-items: center;
+    }
+    
+    .profile_content .profile .profile_details img {
+        height: 45px;
+        width: 45px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    
+    .profile_content .profile .profile_details .name_job {
+        margin-left: 10px;
+    }
+    
+    .profile_content .profile .profile_details .name {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    
+    .profile_content .profile .profile_details .job {
+        font-size: 12px;
+        color: darkgoldenrod;
+    }
+    
+    .profile_details {
+        opacity: 0;
+    }
+    
+    .sideBar.active .profile_details {
+        opacity: 1;
+    }
+    
+    .profile_content .profile #logout {
+        position: absolute;
+        right: 25%;
+        top: 20px;
+        font-size: 25px;
+        transform: translateX(-50%);
+        cursor: pointer;
+    }
+    
+    .sideBar.active .profile #logout {
+        right: 0;
+    }
+    
+    .home_content {
+        left: 85px;
+        height: 100%;
+        width: calc(100% - 85px);
+        transition: all 0.5s ease;
+        overflow: auto;
+        text-align: center;
+        position: absolute;
+    }
+    
+    .home_content .text {
+        font-size: 30px;
+        font-weight: 400;
+        color: #fff;
+        background: chocolate;
+        border-radius: 30px;
+        padding: 5px;
+        text-align: center;
+        margin: 20px 30% 0px 30%;
+    }
+    
+    .home_image_top img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .sideBar.active~.home_content {
+        left: 240px;
+        width: calc(100% - 240px);
+        text-align: center;
+    }
+    
+    .list_customer {
+        z-index: -99;
+        margin: 0 10% 20% 10%;
+    }
+    
+    .list_customer .customer_contain {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .customer {
+        background-color: #11101d;
+        width: 100%;
+        height: 20%;
+        margin: 10px 10px 30px 10px;
+        border-radius: 30px;
+        box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    }
+    
+    .customer .ava {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-attachment: fixed;
+        border-radius: 30px;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .customer .ava img {
+        max-height: 150px;
+        border-radius: 50%;
+        margin: 20px;
+        border: 3px solid chocolate;
+    }
+    
+    .ava #content {
+        width: 70%;
+        text-align: right;
+    }
+    
+    .customer .ava a {
+        color: #fff;
+        background-color: chocolate;
+        padding: 10px;
+        border-radius: 12px;
+        margin: 20px;
+        text-decoration: none;
+    }
+    
+    .customer .ava p {
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        margin: 20px 20px 10px 20px;
+        border-radius: 12px;
+        background-color: darkcyan;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .ava #img {
+            width: 100%;
+            float: none;
+        }
+        .sideBar {
+            display: none;
+        }
+        .home_content {
+            width: 100%;
+            left: 0;
+        }
+        .ava #content {
+            text-align: center;
+            width: 100%;
+        }
+    }
