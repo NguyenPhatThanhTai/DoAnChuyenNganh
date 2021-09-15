@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $(".home_content").load('../../View/TrangChu.html')
     sideBarOC();
     sideBarClick();
 })
