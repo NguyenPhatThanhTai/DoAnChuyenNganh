@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../Effect/css/TrangChu.css">
+    <script type="text/javascript" src="../Effect/js/trangchu.js"></script>
     <title>Document</title>
 </head>
 
@@ -204,37 +205,3 @@
 </body>
 
 </html>
-
-<script>
-    var myIndex = 0;
-    carousel();
-
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        var y = document.getElementsByClassName("nextCount");
-        for (i = 0; i < x.length; i++) {
-            y[i].classList.add("active");
-            x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length && myIndex > y.length) {
-            myIndex = 1
-        }
-        x[myIndex - 1].style.display = "block";
-        y[myIndex - 1].classList.remove("active");
-        setTimeout(carousel, 2000); // Change image every 2 seconds
-    }
-</script>
-
-<script>
-    var openSide = document.getElementById("openMenu");
-    openSide.onclick = function() {
-        document.getElementById("Side").classList.add("active");
-    }
-
-    var closeMenu = document.getElementById("closeMenu");
-    closeMenu.onclick = function() {
-        document.getElementById("Side").classList.remove("active");
-    }
-</script>

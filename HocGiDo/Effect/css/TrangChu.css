@@ -245,30 +245,33 @@
 
 .Side {
     position: fixed;
-    background-color: #fff;
+    background-color: #11101d;
     text-align: left;
     height: 100%;
     width: 0;
     top: 0;
     left: 0;
     z-index: 99;
+    list-style: none;
 }
 
 .Side .bx-x {
-    color: black;
+    color: white;
     position: absolute;
     right: 0;
 }
 
 .Side li {
-    margin: 30px 0 0 0;
+    margin: 30px;
     padding: 10px;
     opacity: 0;
+    border-bottom: 1px solid gray;
 }
 
 .Side li a {
     text-decoration: none;
-    color: black;
+    color: white;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -303,5 +306,10 @@
     }
     .navigation #openSide {
         display: block;
+    }
+    .course {
+        width: 350px;
+        cursor: pointer;
+        z-index: 1;
     }
 }

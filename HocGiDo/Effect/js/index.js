@@ -22,4 +22,8 @@ function sideBarClick() {
     $("#bx-home").click(function() {
         $(".home_content").load('../../View/TrangChu.html')
     })
+
+    $("#bx-laptop").click(function() {
+        window.location = "../../View/code.html"
+    })
 }
