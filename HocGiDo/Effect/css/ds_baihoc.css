@@ -1,0 +1,141 @@
+* {
+    text-align: left;
+    transition: all 0.5s ease;
+}
+
+.left_content {
+    margin: 10px;
+    float: left;
+    width: 70%;
+}
+
+.tittle {
+    margin: 10px;
+}
+
+.tittle h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    background-color: coral;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.tittle p {
+    margin: 10px 0 0 0;
+    font-weight: bold;
+}
+
+.left_content h2 {
+    margin: 50px 0 0 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.whatLearning {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.562);
+}
+
+.learning {
+    display: flex;
+    padding: 5px;
+    padding: 10px;
+}
+
+.learning i {
+    margin: 0 10px 0 0;
+    color: coral;
+}
+
+.ds_hoc h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.total {
+    display: flex;
+    margin: 0 0 30px 0;
+}
+
+.total p {
+    margin: 0 10px 0 0;
+}
+
+.baihoc {
+    display: flex;
+    background-color: rgb(204, 204, 204);
+    color: rgb(56, 56, 56);
+    margin: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    padding: 15px;
+}
+
+.baihoc #name {
+    line-height: 30px;
+}
+
+.baihoc i {
+    margin: 0 10px 0 20px;
+    color: coral;
+    font-size: 30px;
+}
+
+.baihoc #number {
+    position: absolute;
+    right: 20px;
+    z-index: 99;
+    font-weight: bold;
+    font-family: cursive;
+    line-height: 30px;
+}
+
+.baihoc:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+.baihoc::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    right: 5px;
+    top: 10px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.right_content {
+    width: 25%;
+    float: right;
+}
+
+.gioithieu {
+    background-color: #11101d;
+    margin: 10px 10px 0 0;
+    border-radius: 20px;
+    text-align: center;
+    height: 300px;
+    /* width: 300px; */
+    /* position: fixed;
+    display: inline-block; */
+}
+
+.gioithieu img {
+    width: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .right_content {
+        display: none;
+    }
+    .left_content {
+        width: 100%;
+    }
+}

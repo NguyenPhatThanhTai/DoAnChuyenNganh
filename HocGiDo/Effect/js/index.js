@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".home_content").load('../../View/TrangChu.html')
+    $(".loadHere").load('../../View/TrangChu.html')
     sideBarOC();
     sideBarClick();
 })
@@ -20,7 +20,7 @@ function sideBarOC() {
 
 function sideBarClick() {
     $("#bx-home").click(function() {
-        $(".home_content").load('../../View/TrangChu.html')
+        $(".loadHere").load('../../View/TrangChu.html')
     })
 
     $("#bx-laptop").click(function() {

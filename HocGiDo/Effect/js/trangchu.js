@@ -1,5 +1,6 @@
     var myIndex = 0;
     carousel();
+    handel();
 
     function carousel() {
         var i;
@@ -26,4 +27,12 @@
     var closeMenu = document.getElementById("closeMenu");
     closeMenu.onclick = function() {
         document.getElementById("Side").classList.remove("active");
+    }
+
+    function handel() {
+        $('.course').click(function() {
+            if (this.id == "Html") {
+                $(".loadHere").load('../../View/ds_baihoc.html')
+            }
+        })
     }
