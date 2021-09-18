@@ -5,61 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../Effect/css/ds_baihoc.css">
-    <script src="../Effect/js/ds_baihoc.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Effect/css/baihoc.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <title>Html</title>
+    <link rel="stylesheet" href="../Resource/lib/codemirror.css">
+    <link rel="stylesheet" href="../Resource/lib/theme/dracula.css">
+    <script src="../Resource/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../Resource/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="../Resource/mode/css/css.js"></script>
+    <script src="https://unpkg.com/typeit@8.0.3/dist/index.umd.js"></script>
+    <script src="../Resource/mode/javascript/javascript.js"></script>
+    <title>Bài nào đó</title>
 </head>
 
 <body>
-    <div class="tittle">
-        <h1>Khóa học Html cơ bản</h1>
-        <p>Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện html đơn giản!</p>
-    </div>
-    <div class="left_content">
-        <h2>Bạn sẽ học được gì</h2>
-        <div class="whatLearning">
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
+    <div class="main_content">
+        <div class="left_content">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/OJEQaVT45XA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
-            </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
-            </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
-            </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
-            </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
-            </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
-            </div>
-            <div class="learning">
-                <i class='bx bx-check-circle'></i>
-                <p>Biết cách xây dựng giao diện web với HTML</p>
+            <div class="detail">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'subject')">Bài học</button>
+                    <button class="tablinks" onclick="openCity(event, 'note')">Ghi chú</button>
+                    <button class="tablinks" onclick="openCity(event, 'cmt')">Bình luận</button>
+                </div>
+                <div id="subject" class="tabcontent">
+                    <h3>Bài học 1: Tổng quan về HTML</h3>
+                    <p>HTML là một ngôn ngữ đánh dấu được thiết kế ra để tạo nên các trang web trên World Wide Web. Nó có thể được trợ giúp bởi các công nghệ như CSS và các ngôn ngữ kịch bản giống như JavaScript.</p>
+                    <h3>Ví dụ:</h3>
+                    <div class="example">
+                        <textarea id="code"></textarea>
+                    </div>
+                </div>
+
+                <div id="note" class="tabcontent">
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+
+                <div id="cmt" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
             </div>
         </div>
-        <div class="ds_hoc">
-            <h2>Nội dung khóa học</h2>
-            <div class="total">
-                <p>13 phần</p>
-                <p>113 bài học</p>
-            </div>
+        <div class="right_content">
+            <h3>Danh sách bài học</h3>
             <div class="ds">
-                <div class="baihoc" id="bai1">
+                <div class="baihoc">
                     <i class='bx bx-play-circle'></i>
                     <p id="name">Làm được gì sau khóa học?</p>
                     <p id="number">1</p>
@@ -112,12 +105,8 @@
             </div>
         </div>
     </div>
-    <div class="right_content" id="gioithieu">
-        <div class="gioithieu" id="myHeader">
-            <img src="../Images/logo.png">
-        </div>
-    </div>
     <div style="clear: both;"></div>
 </body>
 
 </html>
+<script src="../Effect/js/baihoc.js"></script>
