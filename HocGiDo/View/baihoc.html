@@ -25,9 +25,9 @@
             </div>
             <div class="detail">
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'subject')">Bài học</button>
-                    <button class="tablinks" onclick="openCity(event, 'note')">Ghi chú</button>
-                    <button class="tablinks" onclick="openCity(event, 'cmt')">Bình luận</button>
+                    <button class="tablinks" onclick="openCity(event, 'cmt')"> <i class='bx bx-comment-detail'></i>Bình luận</i></button>
+                    <button class="tablinks" onclick="openCity(event, 'note')"><i class='bx bx-notepad' ></i>Ghi chú</button>
+                    <button class="tablinks" onclick="openCity(event, 'subject')"><i class='bx bx-book-reader'></i>Bài học</button>
                 </div>
                 <div id="subject" class="tabcontent">
                     <h3>Bài học 1: Tổng quan về HTML</h3>
@@ -36,16 +36,17 @@
                     <div class="example">
                         <textarea id="code"></textarea>
                     </div>
+                    <div id="exam_list"></div>
                 </div>
 
                 <div id="note" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p>
+                    <h3>Ghi Chú</h3>
+                    <p>Bài này hiện tại chưa có ghi chú</p>
                 </div>
 
                 <div id="cmt" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
+                    <h3>Bình Luận</h3>
+                    <p>Bài này chưa có bình luận nào, hãy là người bình luận đầu tiên nào</p>
                 </div>
             </div>
         </div>

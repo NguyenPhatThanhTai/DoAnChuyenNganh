@@ -1,5 +1,6 @@
 * {
     text-align: left;
+    transition: all 0.5s ease;
 }
 
 .main_content {
@@ -43,13 +44,20 @@
 
 .tab button {
     background-color: inherit;
-    float: left;
+    float: right;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 14px 16px 14px 50px;
     transition: 0.3s;
     font-size: 17px;
+    position: relative;
+}
+
+.tab i {
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
 }
 
 
@@ -184,6 +192,55 @@
     top: 10px;
     border-radius: 50%;
     z-index: 1;
+}
+
+.exam {
+    background-color: rgb(204, 204, 204);
+    margin: 10px;
+    border-radius: 12px;
+}
+
+.exam p {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.exam .answer label {
+    margin: 0 0 0 10px;
+    display: inline-block;
+    width: 90%;
+    cursor: pointer;
+}
+
+.exam .answer div {
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    background-color: coral;
+    border-radius: 12px;
+}
+
+.submit {
+    padding: 10px;
+    border-radius: 12px;
+    background-color: rgb(255, 106, 80);
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    margin: 10px 0 10px 0;
+}
+
+.submit:hover {
+    background-color: rgb(245, 86, 86);
+}
+
+#exam_list {
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {
