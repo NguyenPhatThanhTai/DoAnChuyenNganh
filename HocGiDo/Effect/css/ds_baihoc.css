@@ -1,6 +1,6 @@
 * {
     text-align: left;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
 }
 
 .left_content {
@@ -133,9 +133,72 @@
     width: 200px;
 }
 
+.dangky {
+    color: white
+}
+
+.dangky p {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    background-color: rgb(255, 158, 40);
+    text-align: center;
+    cursor: pointer;
+}
+
+.dangky p:hover {
+    background-color: rgb(255, 140, 0);
+}
+
+.themvaogio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.themvaogio p {
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(50, 152, 255);
+    position: relative;
+}
+
+.themvaogio i {
+    position: absolute;
+    font-size: 20px;
+}
+
+.themvaogio p:hover {
+    background-color: rgb(0, 128, 255);
+}
+
+.danghoctoi {
+    text-align: center;
+}
+
+.danghoctoi b {
+    color: white;
+    font-style: italic;
+}
+
+.danghoctoi p {
+    background-color: coral;
+    padding: 10px;
+    margin: 20px 10px 10px 10px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
     .right_content {
-        display: none;
+        display: block;
+        width: 100%;
+    }
+    .gioithieu {
+        margin: 10px;
     }
     .left_content {
         width: 100%;
