@@ -55,6 +55,7 @@
     
     .navigation #login {
         margin: 0 10px 0 0;
+        display: none;
     }
     
     .navigation #login p {
@@ -68,6 +69,70 @@
     
     .navigation #login p:hover {
         background-color: rgb(247, 86, 33);
+    }
+    
+    .navigation #User {
+        float: right;
+    }
+    
+    .navigation #User img {
+        width: 15%;
+        background-color: white;
+        border-radius: 50%;
+        float: right;
+        margin: 0 20px 0 0;
+        cursor: pointer;
+    }
+    
+    .navigation #User.active>img+.popup {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: visible;
+    }
+    
+    .popup {
+        color: #fff;
+        position: absolute;
+        background-color: #11101d;
+        right: 10px;
+        top: 80px;
+        border-radius: 12px;
+        box-shadow: 2px 5px 10px black;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+        pointer-events: none;
+    }
+    
+    .popup a {
+        display: block;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    
+    .popup a:hover {
+        background-color: #fff;
+        color: #1d1b32;
+    }
+    
+    .popup p {
+        margin: 20px;
+        font-weight: bold;
+    }
+    
+    .popup i {
+        margin: 10px;
+    }
+    
+    .popup .bx-log-out {
+        color: rgb(226, 70, 70);
+    }
+    
+    .popup .bxs-user-circle {
+        color: rgb(54, 114, 153);
     }
     
     .sideBar {

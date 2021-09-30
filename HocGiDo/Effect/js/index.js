@@ -2,6 +2,7 @@ $(document).ready(function() {
     $(".loadHere").load('../../View/TrangChu.html')
     sideBarOC();
     sideBarClick();
+    dropDownUser();
 })
 
 function sideBarOC() {
@@ -25,5 +26,23 @@ function sideBarClick() {
 
     $("#bx-laptop").click(function() {
         window.location = "../../View/code.html"
+    })
+}
+
+function dropDownUser() {
+    document.addEventListener('click', e => {
+        const isDropDownHover = e.target.matches("[data-dropdown-user]")
+        if (!isDropDownHover && e.target.closest('[data-dropdown]') != null) return;
+
+        let currentDropdown;
+        if (isDropDownHover) {
+            currentDropdown = e.target.closest('[data-dropdown]')
+            currentDropdown.classList.toggle('active');
+        }
+
+        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+            if (dropdown === currentDropdown) return;
+            dropdown.classList.remove('active');
+        })
     })
 }
