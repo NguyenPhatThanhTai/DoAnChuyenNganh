@@ -89,11 +89,18 @@
 
 .baihoc #number {
     position: absolute;
-    right: 20px;
+    right: 0;
     z-index: 99;
-    font-weight: bold;
     font-family: cursive;
     line-height: 30px;
+}
+
+.baihoc .bx-lock-open {
+    color: cadetblue;
+}
+
+.baihoc .bx-lock {
+    color: rgb(221, 132, 132);
 }
 
 .baihoc:hover {
