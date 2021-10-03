@@ -3,6 +3,7 @@ $(document).ready(function() {
     sideBarOC();
     sideBarClick();
     dropDownUser();
+    openSidePhone();
 })
 
 function sideBarOC() {
@@ -16,6 +17,18 @@ function sideBarOC() {
 
     bxsearch.onclick = function() {
         sideBar.classList.toggle("active");
+    }
+}
+
+function openSidePhone() {
+    var openSide = document.getElementById("openMenu");
+    openSide.onclick = function() {
+        document.getElementById("Side").classList.add("active");
+    }
+
+    var closeMenu = document.getElementById("closeMenu");
+    closeMenu.onclick = function() {
+        document.getElementById("Side").classList.remove("active");
     }
 }
 

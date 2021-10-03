@@ -5,6 +5,27 @@
         font-family: "Poppins", sans-serif;
     }
     
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+    
+     ::-webkit-scrollbar-track {
+        background: #ffffff;
+        margin: 10px;
+    }
+    /* Handle */
+    
+     ::-webkit-scrollbar-thumb {
+        background: coral;
+        border-radius: 12px;
+    }
+    /* Handle on hover */
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: rgb(255, 170, 139);
+    }
+    
     .loading {
         position: fixed;
         z-index: 99;
@@ -76,7 +97,6 @@
     
     .navigation #login {
         margin: 0 10px 0 0;
-        display: none;
     }
     
     .navigation #login p {
@@ -94,10 +114,11 @@
     
     .navigation #User {
         float: right;
+        width: 5%;
     }
     
     .navigation #User img {
-        width: 15%;
+        width: 40px;
         background-color: white;
         border-radius: 50%;
         float: right;
@@ -124,6 +145,7 @@
         transform: translateY(-10px);
         transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
         pointer-events: none;
+        z-index: 99;
     }
     
     .popup a {

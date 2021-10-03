@@ -19,16 +19,6 @@
         setTimeout(carousel, 2000); // Change image every 2 seconds
     }
 
-    var openSide = document.getElementById("openMenu");
-    openSide.onclick = function() {
-        document.getElementById("Side").classList.add("active");
-    }
-
-    var closeMenu = document.getElementById("closeMenu");
-    closeMenu.onclick = function() {
-        document.getElementById("Side").classList.remove("active");
-    }
-
     function handel() {
         $('.course').click(function() {
             if (this.id == "Html") {

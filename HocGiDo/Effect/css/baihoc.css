@@ -108,8 +108,7 @@
 
 .right_content {
     float: right;
-    width: 28%;
-    height: 100%;
+    width: 29%;
 }
 
 .right_content h3 {
@@ -121,8 +120,8 @@
 }
 
 .ds {
-    overflow: auto;
-    /* height: 530px; */
+    height: 420px;
+    overflow-y: auto;
 }
 
 
@@ -136,14 +135,16 @@
 /* Track */
 
 .ds::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgb(255, 201, 182);
+    margin: 30px 0 30px 0;
 }
 
 
 /* Handle */
 
 .ds::-webkit-scrollbar-thumb {
-    background: #888;
+    background: coral;
+    border-radius: 10px;
 }
 
 
@@ -176,11 +177,18 @@
 
 .baihoc #number {
     position: absolute;
-    right: 20px;
-    z-index: 99;
-    font-weight: bold;
+    right: 0;
+    z-index: 2;
     font-family: cursive;
     line-height: 30px;
+}
+
+.baihoc .bx-lock-open {
+    color: cadetblue;
+}
+
+.baihoc .bx-lock {
+    color: rgb(221, 132, 132);
 }
 
 .baihoc:hover {
