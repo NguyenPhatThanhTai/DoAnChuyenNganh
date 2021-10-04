@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../Resource/lib/codemirror.css">
+    <script src="../Resource/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="../Resource/lib/theme/dracula.css">
+    <script type="text/javascript" src="../Resource/mode/clike/clike.js"></script>
+    <title>java-code</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="code"></textarea>
+    <textarea disabled id="result"></textarea>
+    <button onclick="complie()">Biên dịch</button>
+</body>
+
+</html>
+<script>
+    var myCodeMirrorJava = CodeMirror.fromTextArea(document.getElementById("code"), {
+        tabSize: 4,
+        mode: "text/x-java",
+        theme: 'dracula',
+        lineNumbers: true,
+        styleActiveSelected: true,
+        styleActiveLine: true,
+        indentWithTabs: true,
+        matchBrackets: true,
+        highlightMatches: true,
+    });
+    async function complie() {
+        var code = myCodeMirrorJava.getValue();
+        var dict = {
+            "test": "val1",
+            "code": code
+        };
+
+        console.log(dict);
+
+        $.ajax({
+            url: "https://dht-tracuu.herokuapp.com/compiler",
+            type: "POST",
+            crossDomain: true,
+            data: JSON.stringify(dict),
+            dataType: "json",
+            success: function(response) {
+                document.getElementById("result").value = response.result;
+            },
+            error: function(xhr, status) {
+                alert("error");
+            }
+        });
+    }
+</script>
