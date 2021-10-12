@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="editor">
+        <p>This is the editor content.</p>
+    </div>
+    <button onclick="excuteCode()">Thử</button>
+    <div id="codeResult"></div>
+</body>
+
+</html>
+
+<script>
+    CKEDITOR.replace('editor');
+
+    function excuteCode() {
+        console.log(CKEDITOR.instances.editor.getData());
+        document.getElementById("codeResult").innerHTML = CKEDITOR.instances.editor.getData();
+    }
+</script>
